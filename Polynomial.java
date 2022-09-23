@@ -20,7 +20,7 @@ public class Polynomial
         {
             return x;
         }
-        if (array.length >= x.array.length) // Non-Cases
+        if (array.length >= x.array.length) // Non Zero-Cases
         {
             for (int i = 0; i<x.array.length;i++)
             {
@@ -49,7 +49,7 @@ public class Polynomial
             }
             return num;
         }
-        return 0.0;
+        return 0;
     }
     public Boolean hasRoot(double x)
     {
@@ -66,6 +66,5 @@ public class Polynomial
         }
         return false;
     }
-
 
 }
