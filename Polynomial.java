@@ -53,9 +53,9 @@ public class Polynomial
         return new Polynomial(nex);
     }
     public double evaluate(double x){
+        double num = 0.0;
         if (array.length != 0) //non-zero array case
         {
-            double num = 0;
             double power = 0;
             for (int i = 0 ; i < array.length ; i++)
             {
@@ -64,7 +64,7 @@ public class Polynomial
             }
             return num;
         }
-        return 0;
+        return num;
     }
     public Boolean hasRoot(double x)
     {
