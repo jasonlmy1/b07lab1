@@ -12,6 +12,7 @@ public class Polynomial
     }
     public Polynomial add(Polynomial x)
     {
+        double[] nex;
         if (x.array.length == 0) //Zero Cases
         {
             return this;
@@ -20,22 +21,36 @@ public class Polynomial
         {
             return x;
         }
-        if (array.length >= x.array.length) // Non Zero-Cases
+        nex = new double[(x.array.length > array.length) ? x.array.length : array.length];
+        if (x.array.length > array.length) //Non- Zero Case
         {
-            for (int i = 0; i<x.array.length;i++)
+            for (int i= 0; i < x.array.length ; i++)
             {
-                array[i] = x.array[i]+array[i];
+                if(i < array.length )
+                {
+                    nex[i] = x.array[i] + array[i];
+                }
+                else
+                {
+                    nex[i] = x.array[i];
+                }
             }
-            return this;
         }
         else
         {
-            for (int i = 0; i<array.length;i++)
+            for (int i =0; i < array.length ; i++)
             {
-                x.array[i] = x.array[i]+array[i];
+                if(i < x.array.length )
+                {
+                    nex[i] = x.array[i] + array[i];
+                }
+                else
+                {
+                    nex[i] = array[i];
+                }
             }
-            return x;
         }
+        return new Polynomial(nex);
     }
     public double evaluate(double x){
         if (array.length != 0) //non-zero array case
